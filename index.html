@@ -191,6 +191,29 @@
     <hr class="sectionTitleRule">
     <hr class="sectionTitleRule2">
 
+	<!-- TrackCraft3R  -->
+	  	<div class="sectionContent">
+<img src="AboutPageAssets/teasers/trackcraft3R_teaser.gif" alt="TrackCraft3R Teaser Image" width="100%">
+	  	</div>
+	  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> TrackCraft3R: Repurposing Video Diffusion Transformers for Dense 3D Tracking</h2>
+      		<h3 class="sectionContentSubTitle"><b>Jisu Nam</b>, <a>Jahyeok Koo</a>, <a>Soowon Son</a>, <a>Jaewoo Jung</a>, <a>Honggyu An</a>, <a>Junhwa Hur<sup>&dagger;</sup></a>, <a>Seungryong Kim<sup>&dagger;</sup></a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> arXiv 2026
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/TrackCraft3r/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Dense 3D tracking from monocular video is fundamental to dynamic scene understanding. While recent 3D foundation models provide reliable per-frame geometry, recovering object motion in this geometry remains challenging and benefits from strong motion priors learned from real-world videos. Existing 3D trackers either follow iterative paradigms trained from scratch on synthetic data or fine-tune 3D reconstruction models learned from static multi-view images, both lacking real-world motion priors. Pre-trained video diffusion transformers (video DiTs) offer rich spatio-temporal priors from internet-scale videos, making them a promising foundation for 3D tracking. However, their <em>frame-anchored</em> formulation, which generates each frame's content, is fundamentally mismatched with <em>reference-anchored</em> dense 3D tracking, which must follow the same physical points from a reference frame across time. We present TrackCraft3R, the first method to repurpose a video DiT as a feed-forward dense 3D tracker. Given a monocular video and its frame-anchored reconstruction pointmap, TrackCraft3R predicts a reference-anchored tracking pointmap that follows every pixel of the first frame across time in a single forward pass, along with its visibility. We achieve this through two designs: (i) a <em>dual-latent representation</em> that uses per-frame geometry latents and reference-anchored track latents as dense queries, and (ii) <em>temporal RoPE alignment</em>, which specifies the target timestamp of each track latent. Together, these designs convert the per-frame generative paradigm of video DiTs into a reference-anchored tracking formulation with LoRA fine-tuning. TrackCraft3R achieves state-of-the-art performance on standard sparse and dense 3D tracking benchmarks, while running 1.3&times; faster and using 4.6&times; less peak memory than the strongest prior method. We further demonstrate robustness to large motions and long videos. Our code and weights will be publicly released.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/TrackCraft3r/" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/TrackCraft3r" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
 	<!-- WorldCam  -->
 	  	<div class="sectionContent">
 <img src="AboutPageAssets/teasers/worldcam_teaser.gif" alt="WorldCam Teaser Image" width="100%">
@@ -199,7 +222,7 @@
       		<h2 class="sectionContentTitle"> WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation</h2>
       		<h3 class="sectionContentSubTitle"><b>Jisu Nam</b>, <a>Yicong Hong</a>, <a>Chun-Hao Paul Huang</a>, <a>Feng Liu</a>, <a>JoungBin Lee</a>, <a>Jiyoung Kim</a>, <a>Siyoon Jin</a>, <a>Yunsung Lee</a>, <a>Jaeyoon Jung</a>, <a>Suhwan Choi</a>, <a>Seungryong Kim<sup>&dagger;</sup></a>, <a>Yang Zhou<sup>&dagger;</sup></a>
 	 		</h3>
-		  	<h3 class="sectionContentSubTitle"><em> Adobe Tech Report 2026
+		  	<h3 class="sectionContentSubTitle"><em> Adobe Tech Report, CVPRW (VideoWorldModel) 2026
 	 		</em></h3>
     	</section>
 		<aside class="externalResourcesNav">
