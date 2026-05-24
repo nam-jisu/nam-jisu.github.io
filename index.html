@@ -28,8 +28,9 @@
 
   /* ====== Image Centering and Scaling ====== */
 
-  .sectionContent img { 
-    width: 100% !important; 
+  .sectionContent img,
+  .sectionContent video {
+    width: 100% !important;
     height: auto !important;
 	justify-content: left !important;
     align-items: left !important;
@@ -193,7 +194,9 @@
 
 	<!-- TrackCraft3R  -->
 	  	<div class="sectionContent">
-<img src="AboutPageAssets/teasers/trackcraft3R_teaser.gif" alt="TrackCraft3R Teaser Image" width="100%">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/trackcraft3R_teaser.mp4" type="video/mp4">
+</video>
 	  	</div>
 	  	<section class="section2Content">
       		<h2 class="sectionContentTitle"> TrackCraft3R: Repurposing Video Diffusion Transformers for Dense 3D Tracking</h2>
@@ -216,7 +219,9 @@
 
 	<!-- WorldCam  -->
 	  	<div class="sectionContent">
-<img src="AboutPageAssets/teasers/worldcam_teaser.gif" alt="WorldCam Teaser Image" width="100%">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/worldcam_teaser.mp4" type="video/mp4">
+</video>
 	  	</div>
 	  	<section class="section2Content">
       		<h2 class="sectionContentTitle"> WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation</h2>
@@ -237,9 +242,88 @@
 
 	  <br><br>
 
+	<!-- Deep Forcing  -->
+		  	<div class="sectionContent">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/deepforcing_teaser.mp4" type="video/mp4">
+</video>
+		  	</div>
+		  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> Deep Forcing: Training-Free Long Video Generation with Deep Sink and Participative Compression</h2>
+      		<h3 class="sectionContentSubTitle"><a>Jung Yi</a>, <a>Wooseok Jang</a>, <a>Paul Hyunbin Cho</a>, <b>Jisu Nam</b>, <a>Heeji Yoon</a>, <a>Seungryong Kim</a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> ICML 2026
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/DeepForcing/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Recent advances in autoregressive video diffusion have enabled real-time frame streaming, yet existing solutions still suffer from temporal repetition, drift, and motion deceleration. We find that naively applying StreamingLLM-style attention sinks to video diffusion leads to fidelity degradation and motion stagnation. To overcome this, we introduce Deep Forcing, which consists of two training-free mechanisms that address this without any fine-tuning. Specifically, 1) Deep Sink dedicates half of the sliding window to persistent sink tokens and re-aligns their temporal RoPE phase to the current timeline, stabilizing global context during long rollouts. 2) Participative Compression performs importance-aware KV cache pruning that preserves only tokens actively participating in recent attention while safely discarding redundant and degraded history, minimizing error accumulation under out-of-distribution length generation. Together, these components enable over 12x extrapolation (e.g. 5s-trained to 60s+ generation) with better imaging quality than LongLive, better aesthetic quality than RollingForcing, almost maintaining overall consistency, and substantial gains in dynamic degree, all while maintaining real-time generation. Our results demonstrate that training-free KV-cache management can match or exceed training-based approaches for autoregressively streaming long-video generation.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2512.05081" target="_blank"><b>Paper</b></a></div>
+		</aside>
+
+	  <br><br>
+
+	<!-- MATRIX  -->
+		  	<div class="sectionContent">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/matrix_teaser.mp4" type="video/mp4">
+</video>
+		  	</div>
+		  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> MATRIX: Mask Track Alignment for Interaction-Aware Video Generation</h2>
+      		<h3 class="sectionContentSubTitle"><a>Siyoon Jin</a>, <a>Seongchan Kim</a>, <a>Dahyun Chung</a>, <a>Jaeho Lee</a>, <a>Hyunwook Choi</a>, <b>Jisu Nam</b>, <a>Jiyoung Kim</a>, <a>Seungryong Kim</a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> ICLR 2026
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/MATRIX/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Video DiTs have advanced video generation, yet they still struggle to model multi-instance or subject-object interactions. This raises a key question: How do these models internally represent interactions? To answer this, we curate MATRIX-11K, a video dataset with interaction-aware captions and multi-instance mask tracks. Using this dataset, we conduct a systematic analysis that formalizes two perspectives of video DiTs: semantic grounding, via video-to-text attention, which evaluates whether noun and verb tokens capture instances and their relations; and semantic propagation, via video-to-video attention, which assesses whether instance bindings persist across frames. We find both effects concentrate in a small subset of interaction-dominant layers. Motivated by this, we introduce MATRIX, a simple and effective regularization that aligns attention in specific layers of video DiTs with multi-instance mask tracks from the MATRIX-11K dataset, enhancing both grounding and propagation. We further propose InterGenEval, an evaluation protocol for interaction-aware video generation. In experiments, MATRIX improves both interaction fidelity and semantic alignment while reducing drift and hallucination. Extensive ablations validate our design choices.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2510.07310" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/MATRIX" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
+	<!-- DiTracker  -->
+		  	<div class="sectionContent">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/ditracker_teaser.mp4" type="video/mp4">
+</video>
+		  	</div>
+		  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> DiTracker: Repurposing Video Diffusion Transformers for Robust Point Tracking</h2>
+      		<h3 class="sectionContentSubTitle"><a>Soowon Son</a>, <a>Honggyu An</a>, <b>Jisu Nam</b>, <a>Chaehyun Kim</a>, <a>Hyunah Ko</a>, <a>Dahyun Chung</a>, <a>Siyoon Jin</a>, <a>Jung Yi</a>, <a>Jaewon Min</a>, <a>Junhwa Hur</a>, <a>Seungryong Kim</a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> arXiv 2025
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/DiTracker/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Point tracking aims to localize corresponding points across video frames, serving as a fundamental task for 4D reconstruction, robotics, and video editing. Existing methods commonly rely on shallow convolutional backbones such as ResNet that process frames independently, lacking temporal coherence and producing unreliable matching costs under challenging conditions. Through systematic analysis, we find that video Diffusion Transformers (DiTs), pre-trained on large-scale real-world videos with spatio-temporal attention, inherently exhibit strong point tracking capability and robustly handle dynamic motions and frequent occlusions. We propose DiTracker, which adapts video DiTs through: (1) query-key attention matching, (2) lightweight LoRA tuning, and (3) cost fusion with a ResNet backbone. Despite training with 8 times smaller batch size, DiTracker achieves state-of-the-art performance on challenging ITTO benchmark and matches or outperforms state-of-the-art models on TAP-Vid benchmarks. Our work validates video DiT features as an effective and efficient foundation for point tracking.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2512.20606" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/DiTracker" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
 	<!-- DiffTrack  -->
 	  	<div class="sectionContent">
-<img src="AboutPageAssets/teasers/difftrack_teaser.gif" alt="DiffTrack Teaser Image" width="100%">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/difftrack_teaser.mp4" type="video/mp4">
+</video>
 	  	</div>
 	  	<section class="section2Content">
       		<h2 class="sectionContentTitle"> Emergent Temporal Correspondences from Video Diffusion Transformers
@@ -259,6 +343,54 @@
 		  </div>
 		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2506.17220" target="_blank"><b>Paper</b></a></div>
 		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/DiffTrack" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
+	<!-- AM-Adapter  -->
+		  	<div class="sectionContent">
+<img src="AboutPageAssets/teasers/amadapter_teaser.jpg" alt="AM-Adapter Teaser Image" width="100%">
+		  	</div>
+		  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> Appearance Matching Adapter for Exemplar-based Semantic Image Synthesis</h2>
+      		<h3 class="sectionContentSubTitle"><a>Siyoon Jin</a>, <b>Jisu Nam</b>, <a>Jiyoung Kim</a>, <a>Dahyun Chung</a>, <a>Yeong-Seok Kim</a>, <a>Joonhyung Park</a>, <a>HeonJeong Chu</a>, <a>Seungryong Kim</a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> ICCV 2025
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/AM-Adapter/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Exemplar-based semantic image synthesis generates images aligned with semantic content while preserving the appearance of an exemplar. Conventional structure-guidance models like ControlNet, are limited as they rely solely on text prompts to control appearance and cannot utilize exemplar images as input. Recent tuning-free approaches address this by transferring local appearance via implicit cross-image matching in the augmented self-attention mechanism of pre-trained diffusion models. However, prior works are often restricted to single-object cases or foreground object appearance transfer, struggling with complex scenes involving multiple objects. To overcome this, we propose AM-Adapter (Appearance Matching Adapter) to address exemplar-based semantic image synthesis in-the-wild, enabling multi-object appearance transfer from a single scene-level image. AM-Adapter automatically transfers local appearances from the scene-level input. AM-Adapter alternatively provides controllability to map user-defined object details to specific locations in the synthesized images. Our learnable framework enhances cross-image matching within augmented self-attention by integrating semantic information from segmentation maps. To disentangle generation and matching, we adopt stage-wise training. We first train the structure-guidance and generation networks, followed by training the matching adapter while keeping the others frozen. During inference, we introduce an automated exemplar retrieval method for selecting exemplar image-segmentation pairs efficiently. Despite utilizing minimal learnable parameters, AM-Adapter achieves state-of-the-art performance, excelling in both semantic alignment and local appearance fidelity. Extensive ablations validate our design choices.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2412.03150" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/AM-Adapter" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
+	<!-- CORAL  -->
+		  	<div class="sectionContent">
+<img src="AboutPageAssets/teasers/coral_teaser.jpg" alt="CORAL Teaser Image" width="100%">
+		  	</div>
+		  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> CORAL: Correspondence Alignment For Improved Virtual Try-On</h2>
+      		<h3 class="sectionContentSubTitle"><a>Jiyoung Kim</a>, <a>Youngjin Shin</a>, <a>Siyoon Jin</a>, <a>Dahyun Chung</a>, <b>Jisu Nam</b>, <a>Tongmin Kim</a>, <a>Jongjae Park</a>, <a>Hyeonwoo Kang</a>, <a>Seungryong Kim</a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> arXiv 2025
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/CORAL/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Existing methods for Virtual Try-On (VTON) often struggle to preserve fine garment details, especially in unpaired settings where accurate person&rarr;garment correspondence is required. These methods do not explicitly enforce person&rarr;garment alignment and fail to explain how correspondence emerges within Diffusion Transformers (DiTs). In this paper, we first analyze full 3D attention in DiT-based architecture and reveal that person&rarr;garment correspondence critically depends on precise person&rarr;garment query-key matching within the full 3D attention. Building on this insight, we introduce CORrespondence ALignment (CORAL), a DiT based framework that explicitly aligns query-key matching with robust external correspondences. CORAL integrates two complementary components: a correspondence distillation loss that aligns reliable matches with person&rarr;garment attention, and an entropy minimization loss that sharpens the attention distribution. We further propose a VLM-based evaluation protocol to better reflect human preference. CORAL consistently improves over the baseline, enhancing both global shape transfer and local detail preservation. Extensive ablations validate our design choices.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2602.17636" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/CORAL" target="_blank"><b>Code</b></a></div>
 		</aside>
 
 	  <br><br>
@@ -283,6 +415,56 @@
 		  </div>
 		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2503.15406" target="_blank"><b>Paper</b></a></div>
 		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/Visual-Persona" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
+	<!-- DiffFace  -->
+		  	<div class="sectionContent">
+<img src="AboutPageAssets/teasers/diffface_teaser.jpg" alt="DiffFace Teaser Image" width="100%">
+		  	</div>
+		  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> DiffFace: Diffusion-based Face Swapping with Facial Guidance</h2>
+      		<h3 class="sectionContentSubTitle"><a>Kihong Kim<sup>*</sup></a>, <a>Yunho Kim<sup>*</sup></a>, <a>Seokju Cho</a>, <a>Junyoung Seo</a>, <b>Jisu Nam</b>, <a>Kychul Lee</a>, <a>Seungryong Kim<sup>&dagger;</sup></a>, <a>KwangHee Lee<sup>&dagger;</sup></a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> PR 2025
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+
+		  <div class="dropdown"><span></span><a href="https://hxngiee.github.io/DiffFace/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">We propose a novel diffusion-based face swapping framework, called DiffFace, composed of training ID Conditional DDPM, sampling with facial guidance, and a target-preserving blending. In specific, in the training process, the ID Conditional DDPM is trained to generate face images with the desired identity. In the sampling process, we use the off-the-shelf facial expert models to make the model transfer source identity while preserving target attributes faithfully. During this process, to preserve the background of the target image, we additionally propose a target-preserving blending strategy. It helps our model to keep the attributes of the target face from noise while transferring the source facial identity. In addition, without any re-training, our model can flexibly apply additional facial guidance and adaptively control the ID-attributes trade-off to achieve the desired results. To the best of our knowledge, this is the first approach that applies the diffusion model in face swapping task. Compared with previous GAN-based approaches, by taking advantage of the diffusion model for the face swapping task, DiffFace achieves better benefits such as training stability, high fidelity, and controllability. Extensive experiments show that our DiffFace is comparable or superior to the state-of-the-art methods on the standard face swapping benchmark.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2212.13344" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/hxngiee/DiffFace" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
+	<!-- MoDiTalker  -->
+		  	<div class="sectionContent">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/moditalker_teaser.mp4" type="video/mp4">
+</video>
+		  	</div>
+		  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> MoDiTalker: Motion-Disentangled Diffusion Model for High-Fidelity Talking Head Generation</h2>
+      		<h3 class="sectionContentSubTitle"><a>Seyeon Kim<sup>*</sup></a>, <a>Siyoon Jin<sup>*</sup></a>, <a>Jihye Park<sup>*</sup></a>, <a>Kihong Kim</a>, <a>Jiyoung Kim</a>, <b>Jisu Nam</b>, <a>Seungryong Kim</a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> AAAI 2025
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/MoDiTalker/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Conventional GAN-based models for talking head generation often suffer from limited quality and unstable training. Recent approaches based on diffusion models aimed to address these limitations and improve fidelity. However, they still face challenges, including extensive sampling times and difficulties in maintaining temporal consistency due to the high stochasticity of diffusion models. To overcome these challenges, we propose a novel motion-disentangled diffusion model for high-quality talking head generation, dubbed MoDiTalker. We introduce the two modules: audio-to-motion (AToM), designed to generate a synchronized lip motion from audio, and motion-to-video (MToV), designed to produce high-quality head video following the generated motion. AToM excels in capturing subtle lip movements by leveraging an audio attention mechanism. In addition, MToV enhances temporal consistency by leveraging an efficient tri-plane representation. Our experiments conducted on standard benchmarks demonstrate that our model achieves superior performance compared to existing models. We also provide comprehensive ablation studies and user study results.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2403.19144" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/KU-CVLAB/MoDiTalker" target="_blank"><b>Code</b></a></div>
 		</aside>
 
 	  <br><br>
@@ -337,7 +519,9 @@
 
 	  <!-- DiffMatch  -->
 	  	<div class="sectionContent">
-<img src="AboutPageAssets/teasers/diffmatch_teaser.gif" alt="DiffMatch Teaser Image" width="100%">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/diffmatch_teaser.mp4" type="video/mp4">
+</video>
 	  	</div>
 	  	<section class="section2Content">
       		<h2 class="sectionContentTitle"> Diffusion Model for Dense Matching</h2>
