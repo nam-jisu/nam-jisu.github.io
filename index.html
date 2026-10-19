@@ -188,6 +188,31 @@
     <hr class="sectionTitleRule">
     <hr class="sectionTitleRule2">
 
+	<!-- GRACE  -->
+	  	<div class="sectionContent">
+<video autoplay loop muted playsinline width="100%">
+  <source src="AboutPageAssets/teasers/grace_teaser.mp4" type="video/mp4">
+</video>
+	  	</div>
+	  	<section class="section2Content">
+      		<h2 class="sectionContentTitle"> GRACE: Generation-Aware Latent Compression for Efficient Video Generation</h2>
+      		<h3 class="sectionContentSubTitle"><a>Jiyoung Kim</a>, <a>Paul Hyunbin Cho</a>, <b>Jisu Nam</b>, <a>Donghoon Lee</a>, <a>Hyunsung Go</a>, <a>Yeonkyeong Lee</a>, <a>Hansaem Kim</a>, <a>Seungryong Kim</a>
+	 		</h3>
+		  	<h3 class="sectionContentSubTitle"><em> arXiv 2026
+	 		</em></h3>
+    	</section>
+		<aside class="externalResourcesNav">
+		  <div class="dropdown"><span></span><a href="https://cvlab-kaist.github.io/GRACE/" target="_blank"><b>Project Page</b></a></div>
+		  <div class="dropdown"> <span><b>Abstract</b></span>
+			<div class="dropdown-content">
+			  <p style="text-align:left;">Highly compressed video autoencoders offer an effective way to accelerate video diffusion models, as the Diffusion Transformer (DiT) operates on far fewer tokens. However, such autoencoders are challenging to train, since a higher compression ratio degrades reconstruction quality and recovering it requires more channels, which is known to slow the convergence of the DiT. The compressed latent also differs from the one the DiT was trained on, so the pretrained DiT must be either retrained from scratch or adapted at considerable cost. Compressing the autoencoder the DiT was trained with appears to preserve compatibility, yet optimizing it for reconstruction alone still shifts the latent away from the distribution the DiT has learned. To address this, we propose Generation-Aware Latent Compression for Efficient Video Generation (GRACE), a two-stage framework that compresses a pretrained video autoencoder while keeping it compatible with the pretrained DiT. Specifically, we keep a frozen base latent from the pretrained encoder and learn a residual latent for the information lost under stronger compression, while aligning the compressed latent with the pretrained latent in the feature space of the frozen DiT so that the autoencoder is optimized for generation. We then adapt the DiT with lightweight fine-tuning and asymmetric denoising, where the base is denoised ahead of the residual. GRACE reduces the token count of Wan2.1-I2V-14B by 8&times; and its latency by 11.1&times; at 480&times;832&times;81, while matching the generation quality of the pretrained pipeline before compression on VBench.</p></div>
+		  </div>
+		  <div class="dropdown"><span></span><a href="https://arxiv.org/abs/2610.10524" target="_blank"><b>Paper</b></a></div>
+		  <div class="dropdown"><span></span><a href="https://github.com/cvlab-kaist/GRACE" target="_blank"><b>Code</b></a></div>
+		</aside>
+
+	  <br><br>
+
 	<!-- TrackCraft3R  -->
 	  	<div class="sectionContent">
 <video autoplay loop muted playsinline width="100%">
